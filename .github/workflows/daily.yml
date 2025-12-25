@@ -1,0 +1,31 @@
+name: 毎日2時のKDB通知
+
+on:
+  schedule:
+    - cron: '0 21 * * *' # JST 06:00
+  workflow_dispatch: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    env:
+      DIFF_JSON_URL: ${{ secrets.DIFF_JSON_URL }}
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.jsをセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 依存関係をインストール
+        run: npm ci
+
+      - name: ビルド
+        run: npm run build
+
+      - name: 通知を実行
+        run: npm run start
