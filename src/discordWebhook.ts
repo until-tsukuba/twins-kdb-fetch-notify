@@ -80,12 +80,12 @@ const typeColors: Record<DiffType, number> = {
 
 const fieldLabels: Record<keyof DiffSubject, string> = {
     name: "科目名",
-    code: "科目コード",
+    code: "科目番号",
     term: "学期",
     moduleTimeTable: "開講時期",
     instructors: "担当教員",
     affiliation: "所属",
-    year: "対象年次",
+    year: "標準履修年次",
 };
 
 const formatTerm = (term: Terms): string => `${term.text}(${term.code})`;
@@ -94,16 +94,16 @@ const moduleLabels: Record<Module, string> = {
     springA: "春A",
     springB: "春B",
     springC: "春C",
-    summerVacation: "夏休み",
+    summerVacation: "夏季休業",
     fallA: "秋A",
     fallB: "秋B",
     fallC: "秋C",
-    springVacation: "春休み",
+    springVacation: "春季休業",
 };
 
 const formatTimeTableSlot = (slot: TimeTable): string => {
     if (slot.period === null) {
-        return `${slot.day} 随時`;
+        return `${slot.day} その他`;
     }
 
     return `${slot.day}${slot.period}`;
