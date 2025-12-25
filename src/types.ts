@@ -15,7 +15,7 @@ export type InstructionalTypeFlags = {
 };
 
 export type InstructionalType = {
-    readonly text: string;
+    readonly text: InstructionalTypeCode;
     readonly flags: InstructionalTypeFlags;
 };
 

@@ -144,11 +144,11 @@ const valueFormatters: FormatterMap = {
 
 const isDiffSubjectKey = (key: string): key is keyof MergedSubject => key in valueFormatters;
 
-const formatValue = <K extends keyof MergedSubject>(key: K, value: MergedSubject[K] | null | undefined): string => valueFormatters[key](value ?? null);
+const formatValue = <K extends keyof MergedSubject>(key: K, value: MergedSubject[K]): string => valueFormatters[key](value);
 
 const inlineFieldKeys = new Set<keyof MergedSubject>(["code", "credits", "year", "affiliation"]);
 
-const buildModifiedFieldsFromRaw = (diff: DiffModifiedValue): DiscordEmbedField[] => {
+const buildModifiedFields = (diff: DiffModifiedValue): DiscordEmbedField[] => {
     const fields: DiscordEmbedField[] = [];
     const diffKeys = Object.keys(diff).filter(isDiffSubjectKey);
 
@@ -160,7 +160,7 @@ const buildModifiedFieldsFromRaw = (diff: DiffModifiedValue): DiscordEmbedField[
 
         fields.push({
             name: fieldLabels[key],
-            value: `${formatValue(key, value.from as MergedSubject[typeof key])} → ${formatValue(key, value.to as MergedSubject[typeof key])}`,
+            value: `${formatValue(key, value.from)} → ${formatValue(key, value.to)}`,
         });
     }
 
@@ -185,7 +185,7 @@ const buildAllFields = (subject: MergedSubject): DiscordEmbedField[] => {
 
 const diffEntryToEmbed = (entry: DiffEntry): DiscordEmbed => {
     const subject = entry.value;
-    const fields = entry.type === "modified" ? buildModifiedFieldsFromRaw(entry.diff) : buildAllFields(subject);
+    const fields = entry.type === "modified" ? buildModifiedFields(entry.diff) : buildAllFields(subject);
 
     return {
         title: `${typeLabels[entry.type]}: ${subject.name ?? "科目名不明"} (${subject.code ?? "科目番号不明"})`,
