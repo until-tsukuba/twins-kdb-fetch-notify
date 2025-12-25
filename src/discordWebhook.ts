@@ -1,5 +1,5 @@
 import { discordWebhookUrl } from "./envs.js";
-import type { DiffJson } from "./kdbDiff.js";
+import type { DiffEntry, DiffJson, DiffModifiedValue, DiffSubject, DiffType, Module, ModuleTimeTable, Terms, TimeTable } from "./types.js";
 
 type DiscordEmbedField = {
     name: string;
@@ -19,52 +19,7 @@ type DiscordWebhookMessage = {
     embeds?: DiscordEmbed[];
 };
 
-type DiffType = "added" | "modified" | "removed";
-
-type Terms = { text: "春学期"; code: "A" } | { text: "秋学期"; code: "B" };
-
-type DaysOfWeek = "月" | "火" | "水" | "木" | "金" | "土" | "日" | "他";
-
-type Periods = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
-
-type TimeTable = {
-    day: DaysOfWeek;
-    period: Periods | null;
-};
-
-type Module = "springA" | "springB" | "springC" | "summerVacation" | "fallA" | "fallB" | "fallC" | "springVacation";
-
-type ModuleTimeTable = Record<Module, TimeTable[]>;
-
-type Affiliation = {
-    name: string;
-    code: string;
-};
-
-type DiffSubject = {
-    name: string;
-    code: string;
-    term: Terms;
-    moduleTimeTable: ModuleTimeTable;
-    instructors: string[];
-    affiliation: Affiliation;
-    year: number[];
-};
-
-type DiffModifiedValue = {
-    [K in keyof DiffSubject]?: { from: DiffSubject[K]; to: DiffSubject[K] };
-};
-
-type DiffEntry =
-    | {
-          type: "added" | "removed";
-          value: DiffSubject;
-      }
-    | {
-          type: "modified";
-          value: DiffSubject;
-          diff: DiffModifiedValue;
-      };
+type DiffSubjectDisplayKey = Exclude<keyof DiffSubject, "raw">;
 
 const typeLabels: Record<DiffType, string> = {
     added: "追加",
@@ -78,7 +33,7 @@ const typeColors: Record<DiffType, number> = {
     removed: 0xe74c3c,
 };
 
-const fieldLabels: Record<keyof DiffSubject, string> = {
+const fieldLabels: Record<DiffSubjectDisplayKey, string> = {
     name: "科目名",
     code: "科目番号",
     term: "学期",
@@ -122,7 +77,7 @@ const formatModuleTimeTable = (moduleTimeTable: ModuleTimeTable): string => {
     return lines.join("\n");
 };
 
-type FormatterMap = { [K in keyof DiffSubject]: (value: DiffSubject[K]) => string };
+type FormatterMap = { [K in DiffSubjectDisplayKey]: (value: DiffSubject[K]) => string };
 
 const valueFormatters: FormatterMap = {
     name: (value) => value,
@@ -134,41 +89,42 @@ const valueFormatters: FormatterMap = {
     year: (value) => (value.length > 0 ? value.join(", ") : "なし"),
 };
 
-const isDiffSubjectKey = (key: string): key is keyof DiffSubject => key in valueFormatters;
+const isDiffSubjectKey = (key: string): key is DiffSubjectDisplayKey => key in valueFormatters;
+
+const formatValue = <K extends DiffSubjectDisplayKey>(key: K, value: DiffSubject[K]): string => valueFormatters[key](value);
 
 const buildModifiedFields = (diff: DiffModifiedValue): DiscordEmbedField[] => {
     const fields: DiscordEmbedField[] = [];
 
-    for (const [key, value] of Object.entries(diff)) {
-        if (!isDiffSubjectKey(key) || !value) {
+    const diffKeys = Object.keys(diff).filter(isDiffSubjectKey);
+
+    for (const key of diffKeys) {
+        const value = diff[key];
+        if (!value) {
             continue;
         }
 
-        const formatter = valueFormatters[key];
         fields.push({
             name: fieldLabels[key],
-            value: `${formatter(value.from)} → ${formatter(value.to)}`,
+            value: `${formatValue(key, value.from)} → ${formatValue(key, value.to)}`,
         });
     }
 
     return fields;
 };
 
-const inlineFieldKeys = new Set<keyof DiffSubject>(["code", "term", "affiliation", "year"]);
+const inlineFieldKeys = new Set<DiffSubjectDisplayKey>(["code", "term", "affiliation", "year"]);
 
 const buildAllFields = (subject: DiffSubject): DiscordEmbedField[] => {
     const fields: DiscordEmbedField[] = [];
 
-    for (const key of Object.keys(subject)) {
-        if (!isDiffSubjectKey(key)) {
-            continue;
-        }
+    const subjectKeys = Object.keys(subject).filter(isDiffSubjectKey);
 
-        const formatter = valueFormatters[key];
+    for (const key of subjectKeys) {
         fields.push({
             name: fieldLabels[key],
-            value: formatter(subject[key]),
-            inline: inlineFieldKeys.has(key) ? true : undefined,
+            value: formatValue(key, subject[key]),
+            ...(inlineFieldKeys.has(key) ? { inline: true } : {}),
         });
     }
 
