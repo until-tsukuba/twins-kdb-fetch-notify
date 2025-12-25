@@ -10,4 +10,4 @@ const main = async (): Promise<void> => {
     console.log(`差分件数: ${Object.keys(diff).length}`);
 };
 
-main()
+main();
