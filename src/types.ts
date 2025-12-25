@@ -33,39 +33,18 @@ export type TimeTable = {
 export type Module = "springA" | "springB" | "springC" | "summerVacation" | "fallA" | "fallB" | "fallC" | "springVacation";
 export type ModuleTimeTable = Readonly<Record<Module, readonly TimeTable[]>>;
 
-export type DiffSubjectRawItem =
-    | string
-    | {
-          text: string;
-          onclick: string;
-      };
-
-export type DiffSubject = {
-    name: string;
-    code: string;
-    term: Terms;
-    moduleTimeTable: ModuleTimeTable;
-    instructors: string[];
-    affiliation: {
-        name: string;
-        code: string;
-    };
-    year: number[];
-    raw: DiffSubjectRawItem[];
-};
-
 export type DiffModifiedValue = {
-    [K in keyof DiffSubject]?: { from: DiffSubject[K]; to: DiffSubject[K] };
+    [K in keyof MergedSubject]?: { from: MergedSubject[K]; to: MergedSubject[K] };
 };
 
 export type DiffEntry =
     | {
           type: "added" | "removed";
-          value: DiffSubject;
+          value: MergedSubject;
       }
     | {
           type: "modified";
-          value: DiffSubject;
+          value: MergedSubject;
           diff: DiffModifiedValue;
       };
 
@@ -130,6 +109,11 @@ export type MergedSubject = {
     remarks: string | null; // 備考
     auditor: string | null; // 科目等履修生申請可否
     conditionsForAuditors: string | null; // 申請条件
+    exchangeStudent: string | null;
+    conditionsForExchangeStudents: string | null;
+    JaEnCourseName: string | null;
+    parentNumber: string | null;
+    parentCourseName: string | null;
 
     affiliation: {
         name: string | null;
@@ -142,4 +126,5 @@ export type MergedSubject = {
     };
 
     requisite: readonly Requisite[];
+    kdbDataUpdateDate: string | null;
 };
