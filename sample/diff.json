@@ -1,274 +1,323 @@
 {
-  "1101102": {
-    "type": "added",
-    "value": {
-      "name": "ファーストイヤーセミナー",
-      "code": "1101102",
-      "term": {
-        "text": "春学期",
-        "code": "A"
-      },
-      "moduleTimeTable": {
-        "springA": [
-          {
-            "day": "金",
-            "period": 2
-          }
-        ],
-        "springB": [
-          {
-            "day": "金",
-            "period": 2
-          }
-        ],
-        "springC": [],
-        "summerVacation": [],
-        "fallA": [],
-        "fallB": [],
-        "fallC": [],
-        "springVacation": []
-      },
-      "instructors": [
-        "常 瀟琳"
-      ],
-      "affiliation": {
-        "name": "人文・文化学群",
-        "code": "21"
-      },
-      "year": [
-        1
-      ],
-      "raw": [
-        "春学期",
-        "春A・春B(金2)",
-        "1101102",
-        {
-          "text": "ファーストイヤーセミナー",
-          "onclick": "return DataSet('2025','A','21','1101102','ファーストイヤーセミナー')"
+    "1101102": {
+        "code": "1101102",
+        "name": "ファーストイヤーセミナー",
+        "syllabusLatestLink": null,
+        "instructionalType": {
+            "value": {
+                "code": "2",
+                "text": "演習",
+                "flags": {
+                    "講義": false,
+                    "演習": true,
+                    "実習･実験･実技": false,
+                    "卒業論文･卒業研究等": false,
+                    "その他": false
+                }
+            },
+            "kdbRaw": "2"
         },
-        "常 瀟琳",
-        "人文・文化学群",
-        "1年"
-      ]
-    }
-  },
-  "1124072": {
-    "type": "modified",
-    "value": {
-      "code": "1124072",
-      "name": "ファーストイヤーセミナー",
-      "syllabusLatestLink": null,
-      "instructionalType": {
-        "value": {
-          "code": "2",
-          "text": "演習",
-          "flags": {
-            "講義": false,
-            "演習": true,
-            "実習･実験･実技": false,
-            "卒業論文･卒業研究等": false,
-            "その他": false
-          }
+        "credits": {
+            "value": {
+                "type": "normal",
+                "value": 1
+            },
+            "kdbRaw": "1.0"
         },
-        "kdbRaw": "2"
-      },
-      "credits": {
-        "value": {
-          "type": "normal",
-          "value": 1
+        "year": {
+            "value": {
+                "type": "normal",
+                "value": [
+                    1
+                ]
+            },
+            "kdbRaw": "1",
+            "twinsRaw": "1年"
         },
-        "kdbRaw": "1.0"
-      },
-      "year": {
-        "value": {
-          "type": "normal",
-          "value": [
-            1
-          ]
-        },
-        "kdbRaw": "1",
-        "twinsRaw": "1年"
-      },
-      "terms": {
-        "term": {
-          "text": "春学期",
-          "code": "A"
-        },
-        "module": "春AB",
-        "weekdayAndPeriod": "金5",
-        "moduleTimeTable": {
-          "springA": [
-            {
-              "day": "金",
-              "period": 5
+        "terms": {
+            "term": {
+                "text": "春学期",
+                "code": "A"
+            },
+            "module": "春AB",
+            "weekdayAndPeriod": "金2",
+            "moduleTimeTable": {
+                "springA": [
+                    {
+                        "day": "金",
+                        "period": 2
+                    }
+                ],
+                "springB": [
+                    {
+                        "day": "金",
+                        "period": 2
+                    }
+                ],
+                "springC": [],
+                "summerVacation": [],
+                "fallA": [],
+                "fallB": [],
+                "fallC": [],
+                "springVacation": []
+            },
+            "twinsRaw": {
+                "term": "春学期",
+                "termCode": "return DataSet('2025','A','21','1101102','ファーストイヤーセミナー')",
+                "module": "春A・春B(金2)"
             }
-          ],
-          "springB": [
-            {
-              "day": "金",
-              "period": 5
-            }
-          ],
-          "springC": [],
-          "summerVacation": [],
-          "fallA": [],
-          "fallB": [],
-          "fallC": [],
-          "springVacation": []
         },
-        "twinsRaw": {
-          "term": "春学期",
-          "termCode": "return DataSet('2025','A','2A','1124072','ファーストイヤーセミナー')",
-          "module": "春A・春B(金5)"
-        }
-      },
-      "classroom": null,
-      "instructor": {
-        "value": [
-          "小﨑 恵生"
-        ],
-        "kdbRaw": "小? 恵生",
-        "twinsRaw": "小﨑 恵生"
-      },
-      "overview": "大学生としての学習,運動・競技及び生活の指導を行い,学習態度,履修問題等教員・学生間のコミュニケーションを図る。",
-      "remarks": "体育7クラス対象\nCDP\n対面",
-      "auditor": "×",
-      "conditionsForAuditors": "各組織の事情,及び各科目の特性並びに教育機器等の台数等により受け入れることが出来ないため",
-      "exchangeStudent": "×",
-      "conditionsForExchangeStudents": "",
-      "JaEnCourseName": "First Year Seminar",
-      "parentNumber": "1101102",
-      "parentCourseName": "フレッシュマン・セミナー",
-      "affiliation": {
-        "name": "体育専門学群",
-        "code": "2A",
-        "twinsRaw": {
-          "name": "体育専門学群",
-          "code": "return DataSet('2025','A','2A','1124072','ファーストイヤーセミナー')"
-        }
-      },
-      "kdbDataUpdateDate": "2025-12-25 15:41:13",
-      "requisite": [
-        {
-          "name": "ファーストイヤーセミナー",
-          "id": "10178",
-          "hasLower": false
-        }
-      ]
-    },
-    "diff": {
-      "credits": {
-        "from": {
-          "value": {
-            "type": "none"
-          },
-          "kdbRaw": "1.0"
-        },
-        "to": {
-          "value": {
-            "type": "normal",
-            "value": 1
-          },
-          "kdbRaw": "1.0"
-        }
-      },
-      "year": {
-        "from": {
-          "value": [
-            1
-          ],
-          "kdbRaw": "1",
-          "twinsRaw": "1年"
-        },
-        "to": {
-          "value": {
-            "type": "normal",
+        "classroom": null,
+        "instructor": {
             "value": [
-              1
+                "常 瀟琳"
+            ],
+            "kdbRaw": "常 瀟琳",
+            "twinsRaw": "常 瀟琳"
+        },
+        "overview": "大学生活について知識と理解を深め、学問研究への動機づけを高める。とくに人文学類における各主専攻分野の学習と研究について理解を促すとともに、大学におけるコミュニケーションの方法等について基本的な指導を行う。",
+        "remarks": "人文1クラス対象\n対面",
+        "auditor": "×",
+        "conditionsForAuditors": "科目の性質及び目的上。",
+        "exchangeStudent": "×",
+        "conditionsForExchangeStudents": "",
+        "JaEnCourseName": "First Year Seminar",
+        "parentNumber": "1101102",
+        "parentCourseName": "フレッシュマン・セミナー",
+        "affiliation": {
+            "name": "人文・文化学群",
+            "code": "21",
+            "twinsRaw": {
+                "name": "人文・文化学群",
+                "code": "return DataSet('2025','A','21','1101102','ファーストイヤーセミナー')"
+            }
+        },
+        "kdbDataUpdateDate": "2025-12-17 12:23:28",
+        "requisite": [
+            {
+                "name": "ファーストイヤーセミナー",
+                "id": "10178",
+                "hasLower": false
+            }
+        ]
+    },
+    "EZA1020": {
+        "type": "added",
+        "value": {
+            "code": "EZA1020",
+            "name": "グローバル課題インターンシップ",
+            "syllabusLatestLink": null,
+            "instructionalType": {
+                "value": {
+                    "code": "0",
+                    "text": "その他",
+                    "flags": {
+                        "講義": false,
+                        "演習": false,
+                        "実習･実験･実技": false,
+                        "卒業論文･卒業研究等": false,
+                        "その他": true
+                    }
+                },
+                "kdbRaw": "0"
+            },
+            "credits": {
+                "value": {
+                    "type": "normal",
+                    "value": 1
+                },
+                "kdbRaw": "1.0"
+            },
+            "year": {
+                "value": {
+                    "type": "normal",
+                    "value": [
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
+                },
+                "kdbRaw": "1 - 4",
+                "twinsRaw": "1・2・3・4年"
+            },
+            "terms": {
+                "term": {
+                    "text": "秋学期",
+                    "code": "B"
+                },
+                "module": "秋ABC",
+                "weekdayAndPeriod": "応談",
+                "moduleTimeTable": {
+                    "springA": [],
+                    "springB": [],
+                    "springC": [],
+                    "summerVacation": [],
+                    "fallA": [
+                        {
+                            "day": "他",
+                            "period": null
+                        }
+                    ],
+                    "fallB": [
+                        {
+                            "day": "他",
+                            "period": null
+                        }
+                    ],
+                    "fallC": [
+                        {
+                            "day": "他",
+                            "period": null
+                        }
+                    ],
+                    "springVacation": []
+                },
+                "twinsRaw": {
+                    "term": "秋学期",
+                    "termCode": "return DataSet('2025','B','24','EZA1020','グローバル課題インターンシップ')",
+                    "module": "秋A・秋B・秋C(他)"
+                }
+            },
+            "classroom": null,
+            "instructor": {
+                "value": [
+                    "野村 名可男"
+                ],
+                "kdbRaw": "野村 名可男",
+                "twinsRaw": "野村 名可男"
+            },
+            "overview": "「大学の国際化によるソーシャルインパクト創出支援事業」およびAIMSプログラムにおいて推奨されている多文化共修の一環として、地球規模課題に取り組んでいる筑波研究学園都市内の国立研究所や民間企業における就業体験や研究実習を通し、課題解決のための研究手法、プロジェクト管理などについての基礎知識を学ぶ。地元中小企業等での現場研修も随時実施する。",
+            "remarks": "英語で授業。\n対面\n基本的には「AIMSプログラム」参加者対象(AIMSプログラム参加者以外の履修希望者は担当教員に別途連絡すること)。 担当教員が履修者に対して本科目のTWINSでの履修登録可能期間を個別に案内し、参加者はその期間内に履修登録を行う。\nEZA1010修得者の履修は認めない。",
+            "auditor": "×",
+            "conditionsForAuditors": "履修許可者のみ",
+            "exchangeStudent": "×",
+            "conditionsForExchangeStudents": "",
+            "JaEnCourseName": "Global Issues Internship",
+            "parentNumber": "EZA1010",
+            "parentCourseName": "グローバル課題インターンシップ",
+            "affiliation": {
+                "name": "生命環境学群",
+                "code": "24",
+                "twinsRaw": {
+                    "name": "生命環境学群",
+                    "code": "return DataSet('2025','B','24','EZA1020','グローバル課題インターンシップ')"
+                }
+            },
+            "kdbDataUpdateDate": "2025-01-21 19:53:04",
+            "requisite": [
+                {
+                    "name": "アセアン横断型グローバル課題挑戦的教育プログラム",
+                    "id": "4058",
+                    "hasLower": false
+                }
             ]
-          },
-          "kdbRaw": "1",
-          "twinsRaw": "1年"
         }
-      },
-      "instructor": {
-        "from": {
-          "value": [
-            "小﨑 恵生"
-          ],
-          "kdbRaw": "Kosaki, Keisei",
-          "twinsRaw": "小﨑 恵生"
-        },
-        "to": {
-          "value": [
-            "小﨑 恵生"
-          ],
-          "kdbRaw": "小? 恵生",
-          "twinsRaw": "小﨑 恵生"
+    },
+    "FA00011": {
+        "type": "removed",
+        "value": {
+            "code": "FA00011",
+            "name": "科学技術倫理",
+            "syllabusLatestLink": null,
+            "instructionalType": {
+                "value": {
+                    "code": "1",
+                    "text": "講義",
+                    "flags": {
+                        "講義": true,
+                        "演習": false,
+                        "実習･実験･実技": false,
+                        "卒業論文･卒業研究等": false,
+                        "その他": false
+                    }
+                },
+                "kdbRaw": "1"
+            },
+            "credits": {
+                "value": {
+                    "type": "normal",
+                    "value": 1
+                },
+                "kdbRaw": "1.0"
+            },
+            "year": {
+                "value": {
+                    "type": "normal",
+                    "value": [
+                        2,
+                        3
+                    ]
+                },
+                "kdbRaw": "2・3",
+                "twinsRaw": "2・3年"
+            },
+            "terms": {
+                "term": {
+                    "text": "秋学期",
+                    "code": "B"
+                },
+                "module": "秋AB",
+                "weekdayAndPeriod": "集中",
+                "moduleTimeTable": {
+                    "springA": [],
+                    "springB": [],
+                    "springC": [],
+                    "summerVacation": [],
+                    "fallA": [
+                        {
+                            "day": "土",
+                            "period": null
+                        }
+                    ],
+                    "fallB": [
+                        {
+                            "day": "土",
+                            "period": null
+                        }
+                    ],
+                    "fallC": [],
+                    "springVacation": []
+                },
+                "twinsRaw": {
+                    "term": "秋学期",
+                    "termCode": "return DataSet('2025','B','25','FA00011','科学技術倫理')",
+                    "module": "秋A・秋B(土)"
+                }
+            },
+            "classroom": null,
+            "instructor": {
+                "value": [
+                    "大嶋 建一"
+                ],
+                "kdbRaw": "大嶋 建一",
+                "twinsRaw": "大嶋 建一"
+            },
+            "overview": "人類が安住できる地球の寿命はオゾン層の破壊,温暖化,大規模な事故などで年代と共に短縮されつつある。 その責任の多くは科学技術の発展と密接な関係がある。そのため,これらの危機を認識し,人類の安全,福祉に貢献する技術者の育成が必要である。本講義は人類が直面した危機の事例を多く紹介し,技術者として必要な倫理の基礎知識を理解させる。",
+            "remarks": "理工学群対象\n10/11,10/18,11/8,11/15,11/29\n対面",
+            "auditor": "",
+            "conditionsForAuditors": "",
+            "exchangeStudent": "×",
+            "conditionsForExchangeStudents": "",
+            "JaEnCourseName": "Science and Engineering Ethics",
+            "parentNumber": "FA00011",
+            "parentCourseName": "科学技術倫理",
+            "affiliation": {
+                "name": "理工学群",
+                "code": "25",
+                "twinsRaw": {
+                    "name": "理工学群",
+                    "code": "return DataSet('2025','B','25','FA00011','科学技術倫理')"
+                }
+            },
+            "kdbDataUpdateDate": "2025-12-17 12:17:01",
+            "requisite": [
+                {
+                    "name": "理工学群学群共通科目",
+                    "id": "111",
+                    "hasLower": false
+                }
+            ]
         }
-      },
-      "kdbDataUpdateDate": {
-        "from": "2025-01-21 17:53:37",
-        "to": "2025-12-25 15:41:13"
-      }
     }
-  },
-  "YBX9928": {
-    "type": "removed",
-    "value": {
-      "name": "卒業研究B(特別履修)",
-      "code": "YBX9928",
-      "term": {
-        "text": "秋学期",
-        "code": "B"
-      },
-      "moduleTimeTable": {
-        "springA": [],
-        "springB": [],
-        "springC": [],
-        "summerVacation": [],
-        "fallA": [
-          {
-            "day": "他",
-            "period": null
-          }
-        ],
-        "fallB": [
-          {
-            "day": "他",
-            "period": null
-          }
-        ],
-        "fallC": [
-          {
-            "day": "他",
-            "period": null
-          }
-        ],
-        "springVacation": []
-      },
-      "instructors": [
-        "山本 浩之"
-      ],
-      "affiliation": {
-        "name": "芸術専門学群",
-        "code": "29"
-      },
-      "year": [
-        4
-      ],
-      "raw": [
-        "秋学期",
-        "秋A・秋B・秋C(他)",
-        "YBX9928",
-        {
-          "text": "卒業研究B(特別履修)",
-          "onclick": "return DataSet('2025','B','29','YBX9928','卒業研究B(特別履修)')"
-        },
-        "山本 浩之",
-        "芸術専門学群",
-        "4年"
-      ]
-    }
-  }
 }
