@@ -1,0 +1,138 @@
+{
+  "1101102": {
+    "type": "added",
+    "value": {
+      "name": "ファーストイヤーセミナー",
+      "code": "1101102",
+      "term": {
+        "text": "春学期",
+        "code": "A"
+      },
+      "moduleTimeTable": {
+        "springA": [
+          {
+            "day": "金",
+            "period": 2
+          }
+        ],
+        "springB": [
+          {
+            "day": "金",
+            "period": 2
+          }
+        ],
+        "springC": [],
+        "summerVacation": [],
+        "fallA": [],
+        "fallB": [],
+        "fallC": [],
+        "springVacation": []
+      },
+      "instructors": [
+        "常 瀟琳"
+      ],
+      "affiliation": {
+        "name": "人文・文化学群",
+        "code": "21"
+      },
+      "year": [
+        1
+      ],
+      "raw": [
+        "春学期",
+        "春A・春B(金2)",
+        "1101102",
+        {
+          "text": "ファーストイヤーセミナー",
+          "onclick": "return DataSet('2025','A','21','1101102','ファーストイヤーセミナー')"
+        },
+        "常 瀟琳",
+        "人文・文化学群",
+        "1年"
+      ]
+    }
+  },
+  "1124072": {
+    "type": "modified",
+    "value": {
+      "instructor": {
+        "from": {
+          "value": [
+            "小﨑 恵生"
+          ],
+          "kdbRaw": "Kosaki, Keisei",
+          "twinsRaw": "小﨑 恵生"
+        },
+        "to": {
+          "value": [
+            "小﨑 恵生"
+          ],
+          "kdbRaw": "小? 恵生",
+          "twinsRaw": "小﨑 恵生"
+        }
+      },
+      "kdbDataUpdateDate": {
+        "from": "2025-01-21 17:53:37",
+        "to": "2025-12-25 15:41:13"
+      }
+    }
+  },
+  "YBX9928": {
+    "type": "removed",
+    "value": {
+      "name": "卒業研究B(特別履修)",
+      "code": "YBX9928",
+      "term": {
+        "text": "秋学期",
+        "code": "B"
+      },
+      "moduleTimeTable": {
+        "springA": [],
+        "springB": [],
+        "springC": [],
+        "summerVacation": [],
+        "fallA": [
+          {
+            "day": "他",
+            "period": null
+          }
+        ],
+        "fallB": [
+          {
+            "day": "他",
+            "period": null
+          }
+        ],
+        "fallC": [
+          {
+            "day": "他",
+            "period": null
+          }
+        ],
+        "springVacation": []
+      },
+      "instructors": [
+        "山本 浩之"
+      ],
+      "affiliation": {
+        "name": "芸術専門学群",
+        "code": "29"
+      },
+      "year": [
+        4
+      ],
+      "raw": [
+        "秋学期",
+        "秋A・秋B・秋C(他)",
+        "YBX9928",
+        {
+          "text": "卒業研究B(特別履修)",
+          "onclick": "return DataSet('2025','B','29','YBX9928','卒業研究B(特別履修)')"
+        },
+        "山本 浩之",
+        "芸術専門学群",
+        "4年"
+      ]
+    }
+  }
+}
