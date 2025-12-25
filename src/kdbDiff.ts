@@ -11,15 +11,7 @@ type TimeTable = {
     period: Periods | null;
 };
 
-type Module =
-    | "springA"
-    | "springB"
-    | "springC"
-    | "summerVacation"
-    | "fallA"
-    | "fallB"
-    | "fallC"
-    | "springVacation";
+type Module = "springA" | "springB" | "springC" | "summerVacation" | "fallA" | "fallB" | "fallC" | "springVacation";
 
 type ModuleTimeTable = Record<Module, TimeTable[]>;
 

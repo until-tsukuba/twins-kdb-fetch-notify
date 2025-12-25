@@ -32,15 +32,7 @@ type TimeTable = {
     period: Periods | null;
 };
 
-type Module =
-    | "springA"
-    | "springB"
-    | "springC"
-    | "summerVacation"
-    | "fallA"
-    | "fallB"
-    | "fallC"
-    | "springVacation";
+type Module = "springA" | "springB" | "springC" | "summerVacation" | "fallA" | "fallB" | "fallC" | "springVacation";
 
 type ModuleTimeTable = Record<Module, TimeTable[]>;
 
@@ -185,8 +177,7 @@ const buildAllFields = (subject: DiffSubject): DiscordEmbedField[] => {
 
 const diffEntryToEmbed = (entry: DiffEntry): DiscordEmbed => {
     const subject = entry.value;
-    const fields =
-        entry.type === "modified" ? buildModifiedFields(entry.diff) : buildAllFields(subject);
+    const fields = entry.type === "modified" ? buildModifiedFields(entry.diff) : buildAllFields(subject);
 
     return {
         title: `${typeLabels[entry.type]}: ${subject.name} (${subject.code})`,
@@ -205,10 +196,7 @@ export const diffToDiscordMessage = (diff: DiffJson): DiscordWebhookMessage => {
     return { embeds };
 };
 
-export const sendDiscordWebhook = async (
-    message: DiscordWebhookMessage,
-    url: string = discordWebhookUrl
-): Promise<void> => {
+export const sendDiscordWebhook = async (message: DiscordWebhookMessage, url: string = discordWebhookUrl): Promise<void> => {
     const response = await fetch(url, {
         method: "POST",
         headers: {
