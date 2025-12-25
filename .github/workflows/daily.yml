@@ -1,4 +1,4 @@
-name: 毎日2時のKDB通知
+name: 毎日6時のKDB通知
 
 on:
   schedule:
