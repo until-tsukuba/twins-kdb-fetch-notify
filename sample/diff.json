@@ -55,6 +55,142 @@
   "1124072": {
     "type": "modified",
     "value": {
+      "code": "1124072",
+      "name": "ファーストイヤーセミナー",
+      "syllabusLatestLink": null,
+      "instructionalType": {
+        "value": {
+          "code": "2",
+          "text": "演習",
+          "flags": {
+            "講義": false,
+            "演習": true,
+            "実習･実験･実技": false,
+            "卒業論文･卒業研究等": false,
+            "その他": false
+          }
+        },
+        "kdbRaw": "2"
+      },
+      "credits": {
+        "value": {
+          "type": "normal",
+          "value": 1
+        },
+        "kdbRaw": "1.0"
+      },
+      "year": {
+        "value": {
+          "type": "normal",
+          "value": [
+            1
+          ]
+        },
+        "kdbRaw": "1",
+        "twinsRaw": "1年"
+      },
+      "terms": {
+        "term": {
+          "text": "春学期",
+          "code": "A"
+        },
+        "module": "春AB",
+        "weekdayAndPeriod": "金5",
+        "moduleTimeTable": {
+          "springA": [
+            {
+              "day": "金",
+              "period": 5
+            }
+          ],
+          "springB": [
+            {
+              "day": "金",
+              "period": 5
+            }
+          ],
+          "springC": [],
+          "summerVacation": [],
+          "fallA": [],
+          "fallB": [],
+          "fallC": [],
+          "springVacation": []
+        },
+        "twinsRaw": {
+          "term": "春学期",
+          "termCode": "return DataSet('2025','A','2A','1124072','ファーストイヤーセミナー')",
+          "module": "春A・春B(金5)"
+        }
+      },
+      "classroom": null,
+      "instructor": {
+        "value": [
+          "小﨑 恵生"
+        ],
+        "kdbRaw": "小? 恵生",
+        "twinsRaw": "小﨑 恵生"
+      },
+      "overview": "大学生としての学習,運動・競技及び生活の指導を行い,学習態度,履修問題等教員・学生間のコミュニケーションを図る。",
+      "remarks": "体育7クラス対象\nCDP\n対面",
+      "auditor": "×",
+      "conditionsForAuditors": "各組織の事情,及び各科目の特性並びに教育機器等の台数等により受け入れることが出来ないため",
+      "exchangeStudent": "×",
+      "conditionsForExchangeStudents": "",
+      "JaEnCourseName": "First Year Seminar",
+      "parentNumber": "1101102",
+      "parentCourseName": "フレッシュマン・セミナー",
+      "affiliation": {
+        "name": "体育専門学群",
+        "code": "2A",
+        "twinsRaw": {
+          "name": "体育専門学群",
+          "code": "return DataSet('2025','A','2A','1124072','ファーストイヤーセミナー')"
+        }
+      },
+      "kdbDataUpdateDate": "2025-12-25 15:41:13",
+      "requisite": [
+        {
+          "name": "ファーストイヤーセミナー",
+          "id": "10178",
+          "hasLower": false
+        }
+      ]
+    },
+    "diff": {
+      "credits": {
+        "from": {
+          "value": {
+            "type": "none"
+          },
+          "kdbRaw": "1.0"
+        },
+        "to": {
+          "value": {
+            "type": "normal",
+            "value": 1
+          },
+          "kdbRaw": "1.0"
+        }
+      },
+      "year": {
+        "from": {
+          "value": [
+            1
+          ],
+          "kdbRaw": "1",
+          "twinsRaw": "1年"
+        },
+        "to": {
+          "value": {
+            "type": "normal",
+            "value": [
+              1
+            ]
+          },
+          "kdbRaw": "1",
+          "twinsRaw": "1年"
+        }
+      },
       "instructor": {
         "from": {
           "value": [

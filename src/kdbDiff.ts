@@ -44,7 +44,9 @@ type DiffSubject = {
     raw: DiffSubjectRawItem[];
 };
 
-type DiffModifiedValue = Record<string, { from: unknown; to: unknown }>;
+type DiffModifiedValue = {
+    [K in keyof DiffSubject]?: { from: DiffSubject[K]; to: DiffSubject[K] };
+};
 
 type DiffEntry =
     | {
@@ -53,7 +55,8 @@ type DiffEntry =
       }
     | {
           type: "modified";
-          value: DiffModifiedValue;
+          value: DiffSubject;
+          diff: DiffModifiedValue;
       };
 
 export type DiffJson = Record<string, DiffEntry>;
