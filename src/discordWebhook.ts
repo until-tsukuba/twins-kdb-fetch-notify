@@ -1,4 +1,4 @@
-import { discordWebhookUrl } from "./envs.js";
+import { diffJsonUrl, discordWebhookUrl } from "./envs.js";
 import type { DiffEntry, DiffJson, DiffModifiedValue, DiffType, MergedSubject, Module, ModuleTimeTable, Terms, TimeTable } from "./types.js";
 
 type DiscordEmbedField = {
@@ -199,6 +199,13 @@ export const diffToDiscordMessage = (diff: DiffJson): DiscordWebhookMessage => {
 
     if (embeds.length === 0) {
         return { content: "差分はありませんでした。" };
+    }
+
+    if (embeds.length > 10) {
+        return {
+            content: `差分件数が${embeds.length}件です。続きは${diffJsonUrl}をご覧ください。`,
+            embeds: embeds.slice(0, 10),
+        };
     }
 
     return { embeds };
