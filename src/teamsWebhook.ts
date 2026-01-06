@@ -1,14 +1,9 @@
 import { teamsWebhookUrl } from "./envs.js";
-import type { DiffJson } from "./types.js";;
+import type { DiffJson } from "./types.js";
 
 const escapeHtml = (raw: string): string => {
-    return raw
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-}
+    return raw.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+};
 
 export const diffToTeamsMessage = (diff: DiffJson): string => {
     return `<p class="editor-paragraph">${escapeHtml(JSON.stringify(diff))}</p>`;
