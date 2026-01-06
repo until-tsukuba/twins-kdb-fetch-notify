@@ -12,3 +12,4 @@ const requireEnv = (key: string): string => {
 
 export const diffJsonUrl = requireEnv("DIFF_JSON_URL");
 export const discordWebhookUrl = requireEnv("DISCORD_WEBHOOK_URL");
+export const teamsWebhookUrl = requireEnv("TEAMS_WEBHOOK_URL");
