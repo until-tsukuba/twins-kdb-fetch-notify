@@ -11,6 +11,7 @@ jobs:
     env:
       DIFF_JSON_URL: ${{ secrets.DIFF_JSON_URL }}
       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
     steps:
       - name: リポジトリをチェックアウト
         uses: actions/checkout@v4
