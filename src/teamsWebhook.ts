@@ -1,3 +1,4 @@
+import { prioritizeDiffEntries } from "./diffUtils.js";
 import { diffJsonUrl, teamsWebhookUrl } from "./envs.js";
 import { fieldLabels, formatValue, isDiffSubjectKey, typeLabels } from "./labels.js";
 import type { DiffEntry, DiffJson, DiffModifiedValue, MergedSubject } from "./types.js";
@@ -37,7 +38,7 @@ const diffEntryToHtml = (entry: DiffEntry): string => {
 };
 
 export const diffToTeamsMessage = (diff: DiffJson): string => {
-    const entries = Object.values(diff);
+    const entries = prioritizeDiffEntries(Object.values(diff));
     if (entries.length === 0) {
         return "<p>差分はありませんでした。</p>";
     }

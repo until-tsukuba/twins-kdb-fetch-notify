@@ -1,4 +1,5 @@
 import { diffJsonUrl, discordWebhookUrl } from "./envs.js";
+import { prioritizeDiffEntries } from "./diffUtils.js";
 import { fieldLabels, formatValue, isDiffSubjectKey, typeLabels } from "./labels.js";
 import type { DiffEntry, DiffJson, DiffModifiedValue, DiffType, MergedSubject } from "./types.js";
 
@@ -75,11 +76,13 @@ const diffEntryToEmbed = (entry: DiffEntry): DiscordEmbed => {
 };
 
 export const diffToDiscordMessage = (diff: DiffJson): DiscordWebhookMessage => {
-    const embeds = Object.values(diff).map((entry) => diffEntryToEmbed(entry));
+    const entries = prioritizeDiffEntries(Object.values(diff));
 
-    if (embeds.length === 0) {
+    if (entries.length === 0) {
         return { content: "差分はありませんでした。" };
     }
+
+    const embeds = entries.map((entry) => diffEntryToEmbed(entry));
 
     if (embeds.length > 10) {
         return {
